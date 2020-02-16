@@ -5,4 +5,14 @@
         <attr name="scratch_mark_color" format="color|reference"></attr>
         <attr name="scratch_drawable" format="reference"></attr>
     </declare-styleable>
+
+    <declare-styleable name="RoundelMenu">
+        <attr name="round_menu_roundColor" format="reference|color"/>
+        <attr name="round_menu_centerColor" format="reference|color"/>
+        <attr name="round_menu_expandRadius" format="dimension"/>
+        <attr name="round_menu_collapseRadius" format="dimension"/>
+        <attr name="round_menu_duration" format="integer"/>
+        <attr name="round_menu_anim_delay" format="integer"/>
+        <attr name="round_menu_item_width" format="dimension"/>
+    </declare-styleable>
 </resources>
