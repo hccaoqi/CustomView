@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_root_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp64"
+        android:layout_marginLeft="@dimen/dp16"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginRight="@dimen/dp16"
+        android:layout_marginBottom="@dimen/dp8"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/dp1"
+        app:cardElevation="@dimen/dp5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|left"
+            android:paddingLeft="@dimen/dp8"
+            android:paddingRight="@dimen/dp16">
+
+            <ImageView
+                android:id="@+id/preview_iv"
+                android:layout_width="@dimen/dp48"
+                android:layout_height="@dimen/dp48"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp8"
+                android:text="CameraMarkView Sample"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/preview_iv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view_describe_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp8"
+                android:maxLines="1"
+                android:text="CameraMarkView Sample"
+                android:textSize="@dimen/sp16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/preview_iv"
+                app:layout_constraintTop_toBottomOf="@+id/view_name_tv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>
