@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.customview.activity.RoudelelMenuActivity
 import com.example.customview.activity.ScratchViewActivity
+import com.example.customview.activity.TestActivity
 import com.example.customview.adapter.EntranceItemAdapter
 import com.example.customview.bean.ViewItemBean
 import com.example.customview.widget.ScratchView
@@ -27,6 +29,24 @@ class MainActivity : AppCompatActivity() {
                 "常见的刮刮乐效果",
                 R.raw.scratch_view,
                 ScratchViewActivity::class.java
+            )
+        )
+
+        viewItemBeans.add(
+            ViewItemBean(
+                "RoudelMenuView",
+                "一个小巧精致的弹出式圆盘菜单",
+                R.raw.roundel_menu,
+                RoudelelMenuActivity::class.java
+            )
+        )
+
+        viewItemBeans.add(
+            ViewItemBean(
+                "Test",
+                "测试专用",
+                R.raw.scratch_view,
+                TestActivity::class.java
             )
         )
         mAdapter = EntranceItemAdapter(this, viewItemBeans)

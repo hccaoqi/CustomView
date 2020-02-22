@@ -24,6 +24,27 @@ class RoundelMenu @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ViewGroup(context, attrs, defStyleAttr) {
 
+    companion object {
+        //收缩状态
+        private const val STATE_COLLAPSE = 0
+        //展开状态
+        private const val STATE_EXPAND = 1
+        //默认动画时长
+        private const val DEFAULT_DURATION = 1000
+        //默认时间间隔
+        private const val DEFAULT_INTERVAL_TIME = 200
+        //默认内圈半径
+        private const val DEFAULT_COLLAPSERADUIS = 22
+        //默认外圈半径
+        private const val DEFAULT_EXPANDRADUIS = 84
+
+        private fun getPositionDistance(touchPointF: PointF, center: PointF): Double {
+            val dx = touchPointF.x - center.x
+            val dy = touchPointF.y - center.y
+            return sqrt((dx * dx + dy * dy).toDouble())
+        }
+    }
+
     //中心圆画笔
     private var mCenterPaint: Paint = Paint()
     //中心圆展开时颜色
@@ -287,9 +308,9 @@ class RoundelMenu @JvmOverloads constructor(
 
     private fun collapse() {
         currentState = STATE_COLLAPSE
-//        for (i in 0 until childCount) {
-//            getChildAt(i).visibility = View.GONE
-//        }
+        for (i in 0 until childCount) {
+            getChildAt(i).visibility = View.GONE
+        }
         invalidate()
         startCollapseAnimation()
     }
@@ -360,26 +381,7 @@ class RoundelMenu @JvmOverloads constructor(
         ).toInt()
     }
 
-    companion object {
-        //收缩状态
-        private const val STATE_COLLAPSE = 0
-        //展开状态
-        private const val STATE_EXPAND = 1
-        //默认动画时长
-        private const val DEFAULT_DURATION = 1500
-        //默认时间间隔
-        private const val DEFAULT_INTERVAL_TIME = 200
-        //默认内圈半径
-        private const val DEFAULT_COLLAPSERADUIS = 22
-        //默认外圈半径
-        private const val DEFAULT_EXPANDRADUIS = 84
 
-        private fun getPositionDistance(touchPointF: PointF, center: PointF): Double {
-            val dx = touchPointF.x - center.x
-            val dy = touchPointF.y - center.y
-            return sqrt((dx * dx + dy * dy).toDouble())
-        }
-    }
 
     /**
      * 内部类，用于设置阴影
