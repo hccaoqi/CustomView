@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.customview.activity.FallingSurfaceViewActivity
 import com.example.customview.activity.RoudelelMenuActivity
 import com.example.customview.activity.ScratchViewActivity
 import com.example.customview.activity.TestActivity
@@ -38,6 +39,15 @@ class MainActivity : AppCompatActivity() {
                 "一个小巧精致的弹出式圆盘菜单",
                 R.raw.roundel_menu,
                 RoudelelMenuActivity::class.java
+            )
+        )
+
+        viewItemBeans.add(
+            ViewItemBean(
+                "FallingSurfaceView",
+                "常见的红包雨效果，自定义红包数量，样式，速度",
+                R.raw.falling_surface,
+                FallingSurfaceViewActivity::class.java
             )
         )
 
